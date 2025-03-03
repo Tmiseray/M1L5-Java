@@ -1,3 +1,5 @@
+package src;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -28,7 +30,7 @@ public class Objective1 {
         int num5 = scan.nextInt();
         scan.nextLine();
 
-        ArrayList<Integer> intList = new ArrayList();
+        ArrayList<Integer> intList = new ArrayList<>();
         intList.add(num1);
         intList.add(num2);
         intList.add(num3);
@@ -40,15 +42,15 @@ public class Objective1 {
 
     public static void reverseArray(ArrayList<Integer> arr){
         Collections.sort(arr);
-        ArrayList<Integer> revArr = new ArrayList<>(arr.reversed());
-        System.out.println("Your array of integers reversed: " + revArr);
+        Collections.reverse(arr);
+        System.out.println("Your array of integers reversed: " + arr);
 //        System.out.println(revArr);
     }
 
     public static void maxValue(ArrayList arr){
-        int maxValue = 0;
+        int maxValue = Integer.MIN_VALUE;
         for(Object num : arr){
-            if((int) num < maxValue){
+            if(((int) num < maxValue)) {
                 continue;
             } else if ((int) num > maxValue) {
                 maxValue = (int) num;
